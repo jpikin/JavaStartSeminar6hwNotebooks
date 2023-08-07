@@ -10,19 +10,20 @@ public class Main {
 
 
     }
-    public static void choice (int num){
+    static void choice (int num){
+        Filtration choiceParam = new Filtration();
         switch (num){
             case 1:
-                System.out.println(1);
+                System.out.println(choiceParam.getColorMap());
                 return;
             case 2:
-                System.out.println(2);
+                System.out.println(choiceParam.getOsMap());
                 return;
             case 3:
-                System.out.println(3);
+                System.out.println(choiceParam.getHddMap());
                 return;
             case 4:
-                System.out.println(4);
+                System.out.println(choiceParam.getOzuMap());
                 return;
             default:
                 System.out.println("Вы ввели не корректные данные, попробуйте еще раз");

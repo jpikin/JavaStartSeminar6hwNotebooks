@@ -1,14 +1,11 @@
 package org.example.seminar6HW;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Notebook {
-    int ozu = 16;
-    int hdd;
-    String os;
-    String color;
+    private int ozu = 16;
+    private int hdd;
+    private String os;
+    private String color;
     public Notebook(String color, String os, int hdd, int ozu) {
         this.color = color;
         this.hdd = hdd;
