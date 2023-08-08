@@ -1,6 +1,7 @@
 package org.example.seminar6HW;
 
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -11,10 +12,10 @@ public class Main {
 
     }
     static void choice (int num){
-        Filtration choiceParam = new Filtration();
+        Data choiceParam = new Data();
         switch (num){
             case 1:
-                System.out.println(choiceParam.getColorMap());
+                choiceParam.getColorChoice();
                 return;
             case 2:
                 System.out.println(choiceParam.getOsMap());
@@ -36,6 +37,6 @@ public class Main {
         System.out.println("1 - Цвет\n2 - Операционная система\n3 - Размер HDD\n4 - Размер ОЗУ");
         int input = scanner.nextInt();
         choice(input);
-
     }
+
 }
