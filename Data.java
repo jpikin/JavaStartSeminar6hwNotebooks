@@ -9,7 +9,7 @@ public class Data {
      private Map<Integer,String> osMap;
      private Map<Integer,String>  colorMap;
     List<Notebook> notebooksList;
-    Scanner sc = new Scanner(System.in);
+//    Scanner sc = new Scanner(System.in);
     Data() {
         this.ozuMap   = new HashMap<>(Map.of(1,4,2,8,3,16,4, 32,
                                              5, "Вернуться назад"));
@@ -46,14 +46,14 @@ public class Data {
     public Map<Integer, String> getOsMap() {
         return this.osMap;
     }
-//    public Map<Integer, String> getColorMap() {return this.colorMap; }
+
     public void getColorChoice() {
         int getChoice;
         System.out.println("Выберите нужный цвет:");
         for (Map.Entry<Integer, String> entry : colorMap.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
             }
-        getChoice = sc.nextInt();
+        getChoice = Main.scanner.nextInt();
         if(getChoice == 5){Main.menu();}
         else {
             for (Notebook notebook : this.notebooksList) {

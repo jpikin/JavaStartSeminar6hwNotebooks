@@ -5,7 +5,8 @@ package org.example.seminar6HW;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
+
 
         menu();
 
@@ -32,11 +33,11 @@ public class Main {
         }
     }
     static void menu(){
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Выберите интересующий вас параметр, нажав соответствующую цифру:");
         System.out.println("1 - Цвет\n2 - Операционная система\n3 - Размер HDD\n4 - Размер ОЗУ");
-        int input = scanner.nextInt();
+        int input = Main.scanner.nextInt();
         choice(input);
     }
-
+    public static Scanner scanner = new Scanner(System.in);
 }
