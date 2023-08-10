@@ -49,7 +49,7 @@ public class Data {
         else {
             for (Notebook notebook : this.notebooksList) {
                 if(notebook.ozu >= (int)ozuMap.get(getChoice)){
-                    printNotebook(notebook);
+                    Main.printNotebook(notebook);
                 }
             }
         }
@@ -64,7 +64,7 @@ public class Data {
         else {
             for (Notebook notebook : this.notebooksList) {
                 if(notebook.hdd >= (int)hddMap.get(getChoice)){
-                    printNotebook(notebook);
+                    Main.printNotebook(notebook);
                 }
             }
         }
@@ -79,7 +79,7 @@ public class Data {
         else {
             for (Notebook notebook : this.notebooksList) {
                 if(notebook.os.contains(osMap.get(getChoice))){
-                    printNotebook(notebook);
+                    Main.printNotebook(notebook);
                 }
             }
         }
@@ -96,18 +96,10 @@ public class Data {
         else {
             for (Notebook notebook : this.notebooksList) {
                 if(notebook.color.contains(colorMap.get(getChoice))){
-                    printNotebook(notebook);
+                    Main.printNotebook(notebook);
                 }
             }
         }
-    }
-    void printNotebook(Notebook notebook){
-        System.out.println("Ноутбук: "+notebook.name);
-        System.out.println("Цвет: "+notebook.color);
-        System.out.println("Объем ОЗУ: "+notebook.ozu);
-        System.out.println("Объем жесткого диска: "+notebook.hdd);
-        System.out.println("Операционная система "+notebook.os);
-        System.out.println();
     }
 }
 
