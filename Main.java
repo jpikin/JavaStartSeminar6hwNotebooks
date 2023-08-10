@@ -19,13 +19,13 @@ public class Main {
                 choiceParam.getColorChoice();
                 return;
             case 2:
-                System.out.println(choiceParam.getOsMap());
+                choiceParam.getOsChoice();
                 return;
             case 3:
-                System.out.println(choiceParam.getHddMap());
+                choiceParam.getHddChoice();
                 return;
             case 4:
-                System.out.println(choiceParam.getOzuMap());
+                choiceParam.getOzuChoice();
                 return;
             default:
                 System.out.println("Вы ввели не корректные данные, попробуйте еще раз");

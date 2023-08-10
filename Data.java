@@ -4,10 +4,11 @@ import java.util.*;
 
 public class Data {
 
-     private Map<Integer, Object> ozuMap;
-     private Map<Integer, Object> hddMap;
-     private Map<Integer,String> osMap;
-     private Map<Integer,String>  colorMap;
+    private Map<Integer, Object> ozuMap;
+    private Map<Integer, Object> hddMap;
+    private Map<Integer,String> osMap;
+    private Map<Integer,String>  colorMap;
+    int getChoice;
     List<Notebook> notebooksList;
 //    Scanner sc = new Scanner(System.in);
     Data() {
@@ -32,23 +33,60 @@ public class Data {
         Notebook eight = new Notebook("Eight","red", "Win 11", 512, 8);
         Notebook nine = new Notebook("Nine","black", "MacOS", 2024, 32);
         Notebook ten = new Notebook("Ten","white", "Linux", 512, 16);
+        Notebook eleven = new Notebook("Eleven","gray", "Linux", 256, 4);
 
         List<Notebook> notebooksLst = new ArrayList<>(Arrays.asList(one,two,three,four,five,
-                six,seven,eight,nine,ten));
+                six,seven,eight,nine,ten,eleven));
         return notebooksLst;
     }
-    public Map<Integer, Object> getOzuMap() {
-        return this.ozuMap;
+    public void getOzuChoice() {
+        System.out.println("Выберите минимальный объем ОЗУ:");
+        for (Map.Entry<Integer, Object> entry : ozuMap.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue() + " Гб");
+        }
+        getChoice = Main.scanner.nextInt();
+        if(getChoice == 5){Main.menu();}
+        else {
+            for (Notebook notebook : this.notebooksList) {
+                if(notebook.ozu >= (int)ozuMap.get(getChoice)){
+                    printNotebook(notebook);
+                }
+            }
+        }
     }
-    public Map<Integer, Object> getHddMap() {
-        return this.hddMap;
+    public void getHddChoice() {
+        System.out.println("Выберите минимальный объем HDD:");
+        for (Map.Entry<Integer, Object> entry : hddMap.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue() + " Гб");
+        }
+        getChoice = Main.scanner.nextInt();
+        if(getChoice == 5){Main.menu();}
+        else {
+            for (Notebook notebook : this.notebooksList) {
+                if(notebook.hdd >= (int)hddMap.get(getChoice)){
+                    printNotebook(notebook);
+                }
+            }
+        }
     }
-    public Map<Integer, String> getOsMap() {
-        return this.osMap;
+    public void getOsChoice() {
+        System.out.println("Выберите нужную операционную систему:");
+        for (Map.Entry<Integer, String> entry : osMap.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+        getChoice = Main.scanner.nextInt();
+        if(getChoice == 6){Main.menu();}
+        else {
+            for (Notebook notebook : this.notebooksList) {
+                if(notebook.os.contains(osMap.get(getChoice))){
+                    printNotebook(notebook);
+                }
+            }
+        }
     }
 
     public void getColorChoice() {
-        int getChoice;
+
         System.out.println("Выберите нужный цвет:");
         for (Map.Entry<Integer, String> entry : colorMap.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
@@ -58,16 +96,18 @@ public class Data {
         else {
             for (Notebook notebook : this.notebooksList) {
                 if(notebook.color.contains(colorMap.get(getChoice))){
-                    System.out.println("Ноутбук: "+notebook.name);
-                    System.out.println("Цвет: "+notebook.color);
-                    System.out.println("Объем ОЗУ: "+notebook.ozu);
-                    System.out.println("Объем жесткого диска: "+notebook.hdd);
-                    System.out.println("Операционная система "+notebook.os);
-                    System.out.println();
+                    printNotebook(notebook);
                 }
             }
-
         }
-        }
-        }
+    }
+    void printNotebook(Notebook notebook){
+        System.out.println("Ноутбук: "+notebook.name);
+        System.out.println("Цвет: "+notebook.color);
+        System.out.println("Объем ОЗУ: "+notebook.ozu);
+        System.out.println("Объем жесткого диска: "+notebook.hdd);
+        System.out.println("Операционная система "+notebook.os);
+        System.out.println();
+    }
+}
 
